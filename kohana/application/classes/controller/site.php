@@ -27,9 +27,9 @@ class Controller_Site extends Controller_Template
 //        $entry = new Model_Site();
 //        $entry->form_insert();
         $article = ORM::factory('site');
-        $article->dado_titulo = 'New title';
-        $article->dado_resumo = 'New title';
-        $article->dado_descricao = 'New title';
+        $article->dado_titulo = $this->request->post('dado_titulo');
+        $article->dado_resumo = $this->request->post('dado_resumo');
+        $article->dado_descricao = $this->request->post('dado_descricao');
         if ($article->save()) {
             $this->request->redirect('site/form');
         }

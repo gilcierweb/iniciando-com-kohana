@@ -17,6 +17,18 @@ class Controller_Site extends Controller_Template
         $this->template->content = 'hello, world!<br>Admin Base';
     }
 
+    public function action_list()
+    {
+        //Seleciona todos os posts
+        $posts = ORM::Factory('site')->find_all();
+        //Seleciona a View de lista de posts,
+        //une o objetos Post selecionado acima a view
+        $view = View::Factory('site/list');
+        $view->set('posts', $posts);
+        //Envia a renderizacao da view ao browser
+        $this->request->response = $view;
+    }
+
     public function action_form()
     {
         $this->template->content = View::factory('site/form');

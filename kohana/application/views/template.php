@@ -10,9 +10,9 @@
         <![endif]-->
 
         <!-- Le styles -->
-           <?php echo Html::style("bootstrap/css/bootstrap.css"); ?>
-       <?php echo Html::style("bootstrap/css/bootstrap-responsive.css");?>
-       
+        <?php echo Html::style("bootstrap/css/bootstrap.css"); ?>
+        <?php echo Html::style("bootstrap/css/bootstrap-responsive.css"); ?>
+
     </head>
     <body>
         <div class="container">

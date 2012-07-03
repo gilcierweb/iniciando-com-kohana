@@ -23,9 +23,9 @@ class Model_Site extends ORM
 //    }
 //
     public function form_insert()
-    {
+    {//ainda não sei fazer ou não se dar pra fazer esse tipo de função como no codeigniter 03/07/12
         // This is where you do domain logic...
-        //$article = ORM::factory('site');
+        $article = ORM::factory('site');
         $article->dado_titulo = 'New title';
         $article->dado_resumo = 'New title';
         $article->dado_descricao = 'New title';

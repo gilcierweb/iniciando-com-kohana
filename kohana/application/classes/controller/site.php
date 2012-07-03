@@ -9,13 +9,17 @@ class Controller_Site extends Controller_Template
 
     public function action_index()
     {
-        $this->template->content = View::factory('site/index'); 
+        $this->template->content = View::factory('site/index');
     }
 
-
     public function action_gil()
-    {       
-        $this->template->content = 'hello, world!<br>Admin Base';      
+    {
+        $this->template->content = 'hello, world!<br>Admin Base';
+    }
+
+    public function action_from()
+    {
+        $this->template->content = 'hello, world!<br>Admin Base';
     }
 
 }

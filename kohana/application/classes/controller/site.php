@@ -24,15 +24,15 @@ class Controller_Site extends Controller_Template
 
     public function action_form_insert()
     {
-        //$article = ORM::factory('site');
-        $entry = new Model_Site();
-        $entry->form_insert();
-        //$article->dado_titulo = 'New title';
-        //$article->dado_resumo = 'New title';
-        //$article->dado_descricao = 'New title';
-        //if ($article->save()) {
-        //    $this->request->redirect('site/form');
-        //}
+//        $entry = new Model_Site();
+//        $entry->form_insert();
+        $article = ORM::factory('site');
+        $article->dado_titulo = 'New title';
+        $article->dado_resumo = 'New title';
+        $article->dado_descricao = 'New title';
+        if ($article->save()) {
+            $this->request->redirect('site/form');
+        }
     }
 
 }

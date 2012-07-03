@@ -17,9 +17,9 @@ class Controller_Site extends Controller_Template
         $this->template->content = 'hello, world!<br>Admin Base';
     }
 
-    public function action_from()
+    public function action_form()
     {
-        $this->template->content = 'hello, world!<br>Admin Base';
+        $this->template->content = View::factory('site/form');
     }
 
 }

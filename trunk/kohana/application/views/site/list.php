@@ -9,8 +9,8 @@
         <?php echo $dado->dado_descricao; ?>
     </p>
     <span>
-        <?php echo html::anchor('blog/form/' . $dado->dado_id, '[ Editar ] '); ?> 
-        <?php echo html::anchor('blog/delete/' . $dado->dado_id, '[ Excluir ] '); ?> 
+        <?php echo html::anchor('site/form/' . $dado->dado_id, '[ Editar ] '); ?> 
+        <?php echo html::anchor('site/deletar/' . $dado->dado_id, '[ Excluir ] '); ?> 
     </span>
     <hr />    
 

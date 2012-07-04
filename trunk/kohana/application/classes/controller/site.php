@@ -20,11 +20,11 @@ class Controller_Site extends Controller_Template
     public function action_list()
     {//qualquer nome erra da tabela da erro estranho!!
         //Seleciona todos os posts
-        $posts = ORM::Factory('site')->find_all();
+        $dados = ORM::Factory('site')->find_all();
         //Seleciona a View de lista de posts,
         //une o objetos Post selecionado acima a view
         $view = View::Factory('site/list');
-        $view->set('posts', $posts);
+        $view->set('dados', $dados);
         //Envia a renderizacao da view ao browser
         $this->template->content = $view;
     }

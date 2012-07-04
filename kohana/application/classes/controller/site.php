@@ -47,6 +47,19 @@ class Controller_Site extends Controller_Template
         }
     }
 
+    public function action_deletar()
+    {
+        echo $id = $this->request->param('id'); //= $this->uri->segment(3); // igual ao codeigniter
+        echo $this->request->param('id');
+        //Apaga o objeto post com o id passado
+        //como parametro 
+        ORM::factory('site', $id)
+                ->delete();
+        //tá dando erro model não carregado não sei resolver
+        //redireciona para o controller blog
+        $this->request->redirect('/');
+    }
+
 }
 
 // End Welcome

@@ -591,3 +591,67 @@
 #5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
 #7 {main}
+2012-07-03 14:50:42 --- ERROR: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\model\site.php [ 29 ]
+2012-07-03 14:50:42 --- STRACE: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\model\site.php [ 29 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\model\site.php(29): Kohana_Core::error_handler(2048, 'Creating defaul...', 'D:\xampp\htdocs...', 29, Array)
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(29): Model_Site->form_insert()
+#2 [internal function]: Controller_Site->action_form_insert()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}
+2012-07-03 14:59:21 --- ERROR: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\model\site.php [ 29 ]
+2012-07-03 14:59:21 --- STRACE: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\model\site.php [ 29 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\model\site.php(29): Kohana_Core::error_handler(2048, 'Creating defaul...', 'D:\xampp\htdocs...', 29, Array)
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(29): Model_Site->form_insert()
+#2 [internal function]: Controller_Site->action_form_insert()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}
+2012-07-03 15:00:01 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Kohana_ORM::factory(), called in D:\xampp\htdocs\kohana\application\classes\model\site.php on line 28 and defined ~ MODPATH\orm\classes\kohana\orm.php [ 32 ]
+2012-07-03 15:00:01 --- STRACE: ErrorException [ 2 ]: Missing argument 1 for Kohana_ORM::factory(), called in D:\xampp\htdocs\kohana\application\classes\model\site.php on line 28 and defined ~ MODPATH\orm\classes\kohana\orm.php [ 32 ]
+--
+#0 D:\xampp\htdocs\kohana\modules\orm\classes\kohana\orm.php(32): Kohana_Core::error_handler(2, 'Missing argumen...', 'D:\xampp\htdocs...', 32, Array)
+#1 D:\xampp\htdocs\kohana\application\classes\model\site.php(28): Kohana_ORM::factory()
+#2 D:\xampp\htdocs\kohana\application\classes\controller\site.php(29): Model_Site->form_insert()
+#3 [internal function]: Controller_Site->action_form_insert()
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#7 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#8 {main}
+2012-07-03 15:08:55 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Kohana_ORM::factory(), called in D:\xampp\htdocs\kohana\application\classes\model\site.php on line 28 and defined ~ MODPATH\orm\classes\kohana\orm.php [ 32 ]
+2012-07-03 15:08:55 --- STRACE: ErrorException [ 2 ]: Missing argument 1 for Kohana_ORM::factory(), called in D:\xampp\htdocs\kohana\application\classes\model\site.php on line 28 and defined ~ MODPATH\orm\classes\kohana\orm.php [ 32 ]
+--
+#0 D:\xampp\htdocs\kohana\modules\orm\classes\kohana\orm.php(32): Kohana_Core::error_handler(2, 'Missing argumen...', 'D:\xampp\htdocs...', 32, Array)
+#1 D:\xampp\htdocs\kohana\application\classes\model\site.php(28): Kohana_ORM::factory()
+#2 D:\xampp\htdocs\kohana\application\classes\controller\site.php(29): Model_Site->form_insert()
+#3 [internal function]: Controller_Site->action_form_insert()
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#6 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#7 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#8 {main}
+2012-07-03 15:32:23 --- ERROR: ErrorException [ 4096 ]: Argument 3 passed to Kohana_Form::input() must be an array, string given, called in D:\xampp\htdocs\kohana\application\views\site\form.php on line 4 and defined ~ SYSPATH\classes\kohana\form.php [ 93 ]
+2012-07-03 15:32:23 --- STRACE: ErrorException [ 4096 ]: Argument 3 passed to Kohana_Form::input() must be an array, string given, called in D:\xampp\htdocs\kohana\application\views\site\form.php on line 4 and defined ~ SYSPATH\classes\kohana\form.php [ 93 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\form.php(93): Kohana_Core::error_handler(4096, 'Argument 3 pass...', 'D:\xampp\htdocs...', 93, Array)
+#1 D:\xampp\htdocs\kohana\application\views\site\form.php(4): Kohana_Form::input('dado_titulo', '', 'class="input-sm...')
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(228): Kohana_View->render()
+#5 D:\xampp\htdocs\kohana\application\views\template.php(22): Kohana_View->__toString()
+#6 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#7 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#8 D:\xampp\htdocs\kohana\system\classes\kohana\controller\template.php(44): Kohana_View->render()
+#9 [internal function]: Kohana_Controller_Template->after()
+#10 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(121): ReflectionMethod->invoke(Object(Controller_Site))
+#11 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#12 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#13 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#14 {main}

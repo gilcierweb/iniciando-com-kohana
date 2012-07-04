@@ -742,3 +742,113 @@
 #4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
 #6 {main}
+2012-07-04 14:51:48 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 14:51:48 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 14:51:51 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 14:51:51 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 14:53:59 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 14:53:59 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 14:54:03 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 14:54:03 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 14:54:08 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 14:54:08 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:00:42 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:00:42 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:00:43 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:00:43 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:00:43 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:00:43 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:01:02 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:01:02 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:02:21 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:02:21 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 15:02:26 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 15:02:26 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete()
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}

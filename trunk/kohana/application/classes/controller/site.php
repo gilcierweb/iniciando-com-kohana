@@ -18,7 +18,7 @@ class Controller_Site extends Controller_Template
     }
 
     public function action_list()
-    {
+    {//qualquer nome erra da tabela da erro estranho!!
         //Seleciona todos os posts
         $posts = ORM::Factory('site')->find_all();
         //Seleciona a View de lista de posts,
@@ -26,7 +26,7 @@ class Controller_Site extends Controller_Template
         $view = View::Factory('site/list');
         $view->set('posts', $posts);
         //Envia a renderizacao da view ao browser
-        $this->request->response = $view;
+        $this->template->content = $view;
     }
 
     public function action_form()

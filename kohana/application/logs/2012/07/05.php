@@ -186,3 +186,50 @@
 --
 #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main}
+2012-07-05 11:09:35 --- ERROR: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+2012-07-05 11:09:35 --- STRACE: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 11:12:11 --- ERROR: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+2012-07-05 11:12:11 --- STRACE: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 11:14:04 --- ERROR: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+2012-07-05 11:14:04 --- STRACE: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 2 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 11:51:04 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL blog/form was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+2012-07-05 11:51:04 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL blog/form was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-05 11:51:22 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL blog/form was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+2012-07-05 11:51:22 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL blog/form was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-05 11:54:33 --- ERROR: ErrorException [ 4096 ]: Argument 3 passed to Kohana_Form::submit() must be an array, string given, called in D:\xampp\htdocs\kohana\application\views\site\form.php on line 5 and defined ~ SYSPATH\classes\kohana\form.php [ 354 ]
+2012-07-05 11:54:33 --- STRACE: ErrorException [ 4096 ]: Argument 3 passed to Kohana_Form::submit() must be an array, string given, called in D:\xampp\htdocs\kohana\application\views\site\form.php on line 5 and defined ~ SYSPATH\classes\kohana\form.php [ 354 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\form.php(354): Kohana_Core::error_handler(4096, 'Argument 3 pass...', 'D:\xampp\htdocs...', 354, Array)
+#1 D:\xampp\htdocs\kohana\application\views\site\form.php(5): Kohana_Form::submit('submit', 'Send', 'class="btn"')
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(228): Kohana_View->render()
+#5 D:\xampp\htdocs\kohana\application\views\template.php(22): Kohana_View->__toString()
+#6 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#7 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#8 D:\xampp\htdocs\kohana\system\classes\kohana\controller\template.php(44): Kohana_View->render()
+#9 [internal function]: Kohana_Controller_Template->after()
+#10 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(121): ReflectionMethod->invoke(Object(Controller_Site))
+#11 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#12 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#13 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#14 {main}

@@ -6,7 +6,9 @@ class Model_Site extends ORM
 {
 
     public $_table_name = 'dados';
-    public $_primary_key = 'dado_id';   
+    public $_primary_key = 'dado_id';
+    //protected $sorting = array('last_login' => 'desc', 'username' => 'asc');
+   // public $sorting = array('dado_id' => 'desc');
 
 //    protected $model = 'model_site';
     //protected $table_name = 'dados';

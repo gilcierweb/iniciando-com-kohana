@@ -18,7 +18,10 @@ class Controller_Site extends Controller_Template
     }
 
     public function action_list()
-    {//qualquer nome erra da tabela da erro estranho!!
+    {
+        //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
+        //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
+        ////qualquer nome erra da tabela da erro estranho!!
         //Seleciona todos os posts          
         $dados = ORM::Factory('site')->find_all();
         //Seleciona a View de lista de posts,

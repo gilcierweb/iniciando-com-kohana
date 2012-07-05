@@ -53,9 +53,12 @@ class Controller_Site extends Controller_Template
         //echo $this->request->param('id');
         //Apaga o objeto post com o id passado
         //como parametro    
-        $d = ORM::factory('site', $id);
-        if ($d->loaded()) {
-            $d->delete();
+        $deletar = ORM::factory('site', $id);
+        // Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
+        if ($deletar->loaded()) {
+            $deletar->delete();
+        } else {
+            echo 'Error: Não carregou o model!!';
         }
 //        ORM::factory('site',$id)
 //                ->delete();

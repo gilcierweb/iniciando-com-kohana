@@ -19,7 +19,7 @@ class Controller_Site extends Controller_Template
 
     public function action_list()
     {//qualquer nome erra da tabela da erro estranho!!
-        //Seleciona todos os posts       
+        //Seleciona todos os posts          
         $dados = ORM::Factory('site')->find_all();
         //Seleciona a View de lista de posts,
         //une o objetos Post selecionado acima a view
@@ -48,7 +48,7 @@ class Controller_Site extends Controller_Template
     }
 
     public function action_deletar()
-    {
+    {$this->session = Session::instance();
         $id = $this->request->param('id'); //= $this->uri->segment(3); // igual ao codeigniter
         //echo $this->request->param('id');
         //Apaga o objeto post com o id passado
@@ -56,10 +56,12 @@ class Controller_Site extends Controller_Template
         $deletar = ORM::factory('site', $id);
         // Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
         if ($deletar->loaded()) {
-            $deletar->delete();
+            $deletar->delete();           
+            $this->session->set('msg', '<div class="alert alert-success">
+<a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');
         } else {
             echo 'Error: Não carregou o model!!';
-        }
+        }        
 //        ORM::factory('site',$id)
 //                ->delete();
         //tá dando erro model não carregado não sei resolver

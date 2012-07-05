@@ -233,3 +233,23 @@
 #12 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #13 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
 #14 {main}
+2012-07-05 14:16:31 --- ERROR: ErrorException [ 1 ]: Call to a member function body() on a non-object ~ SYSPATH\classes\kohana\controller\template.php [ 44 ]
+2012-07-05 14:16:31 --- STRACE: ErrorException [ 1 ]: Call to a member function body() on a non-object ~ SYSPATH\classes\kohana\controller\template.php [ 44 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 14:16:32 --- ERROR: ErrorException [ 1 ]: Call to a member function body() on a non-object ~ SYSPATH\classes\kohana\controller\template.php [ 44 ]
+2012-07-05 14:16:32 --- STRACE: ErrorException [ 1 ]: Call to a member function body() on a non-object ~ SYSPATH\classes\kohana\controller\template.php [ 44 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 14:18:16 --- ERROR: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 4 ]
+2012-07-05 14:18:16 --- STRACE: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 4 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 14:18:18 --- ERROR: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 4 ]
+2012-07-05 14:18:18 --- STRACE: ErrorException [ 1 ]: Using $this when not in object context ~ APPPATH\views\site\list.php [ 4 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}

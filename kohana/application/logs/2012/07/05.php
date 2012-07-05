@@ -372,3 +372,69 @@
 #11 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #12 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
 #13 {main}
+2012-07-05 16:05:52 --- ERROR: ErrorException [ 8 ]: Undefined variable: article ~ APPPATH\views\site\form.php [ 2 ]
+2012-07-05 16:05:52 --- STRACE: ErrorException [ 8 ]: Undefined variable: article ~ APPPATH\views\site\form.php [ 2 ]
+--
+#0 D:\xampp\htdocs\kohana\application\views\site\form.php(2): Kohana_Core::error_handler(8, 'Undefined varia...', 'D:\xampp\htdocs...', 2, Array)
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(228): Kohana_View->render()
+#4 D:\xampp\htdocs\kohana\application\views\template.php(22): Kohana_View->__toString()
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(61): include('D:\xampp\htdocs...')
+#6 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(343): Kohana_View::capture('D:\xampp\htdocs...', Array)
+#7 D:\xampp\htdocs\kohana\system\classes\kohana\controller\template.php(44): Kohana_View->render()
+#8 [internal function]: Kohana_Controller_Template->after()
+#9 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(121): ReflectionMethod->invoke(Object(Controller_Site))
+#10 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#11 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#12 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#13 {main}
+2012-07-05 16:08:30 --- ERROR: ErrorException [ 1 ]: Class 'Model_Article' not found ~ APPPATH\classes\controller\site.php [ 38 ]
+2012-07-05 16:08:30 --- STRACE: ErrorException [ 1 ]: Class 'Model_Article' not found ~ APPPATH\classes\controller\site.php [ 38 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-05 16:08:48 --- ERROR: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+2012-07-05 16:08:48 --- STRACE: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(137): Kohana_View->set_filename('site/formt')
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(40): Kohana_View->__construct('site/formt')
+#2 [internal function]: Controller_Site->action_form()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}
+2012-07-05 16:10:17 --- ERROR: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+2012-07-05 16:10:17 --- STRACE: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(137): Kohana_View->set_filename('site/formt')
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(40): Kohana_View->__construct('site/formt')
+#2 [internal function]: Controller_Site->action_form()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}
+2012-07-05 16:10:18 --- ERROR: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+2012-07-05 16:10:18 --- STRACE: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(137): Kohana_View->set_filename('site/formt')
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(40): Kohana_View->__construct('site/formt')
+#2 [internal function]: Controller_Site->action_form()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}
+2012-07-05 16:10:18 --- ERROR: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+2012-07-05 16:10:18 --- STRACE: View_Exception [ 0 ]: The requested view site/formt could not be found ~ SYSPATH\classes\kohana\view.php [ 252 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\view.php(137): Kohana_View->set_filename('site/formt')
+#1 D:\xampp\htdocs\kohana\application\classes\controller\site.php(40): Kohana_View->__construct('site/formt')
+#2 [internal function]: Controller_Site->action_form()
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#5 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#6 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#7 {main}

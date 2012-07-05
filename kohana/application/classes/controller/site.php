@@ -31,12 +31,16 @@ class Controller_Site extends Controller_Template
 
     public function action_form()
     {
-        $article_id = $this->request->param('id');
-        $article = new Model_Site($article_id);
-        $article->values($_POST); // populate $article object from $_POST array
-        $article->save(); // saves article to database
-
-        $this->template->content = View::factory('site/form');
+        $id = $this->request->param('id');
+//        $article = new Model_Site($article_id);
+//        $article->values($_POST); // populate $article object from $_POST array
+//        $article->save(); // saves article to database
+        //Seleciona um objeto Post através do ORM,
+        //se nao existir id trás um objeto em branco  
+        $article = ORM::factory('site', $id);
+        $view = new View('site/form');
+        $view->set("article", $article);
+        $this->template->content = $view;
     }
 
     // loads the new article form

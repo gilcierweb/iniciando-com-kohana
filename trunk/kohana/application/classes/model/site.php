@@ -6,13 +6,7 @@ class Model_Site extends ORM
 {
 
     public $_table_name = 'dados';
-    public $_primary_key = 'dado_id';
-
-    public function __construct()
-    {
-        // load database library into $this->db (can be omitted if not required)
-        parent::__construct();
-    }
+    public $_primary_key = 'dado_id';   
 
 //    protected $model = 'model_site';
     //protected $table_name = 'dados';

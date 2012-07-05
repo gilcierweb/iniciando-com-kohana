@@ -19,7 +19,7 @@ class Controller_Site extends Controller_Template
 
     public function action_list()
     {//qualquer nome erra da tabela da erro estranho!!
-        //Seleciona todos os posts
+        //Seleciona todos os posts       
         $dados = ORM::Factory('site')->find_all();
         //Seleciona a View de lista de posts,
         //une o objetos Post selecionado acima a view
@@ -49,15 +49,21 @@ class Controller_Site extends Controller_Template
 
     public function action_deletar()
     {
-       $id = $this->request->param('id'); //= $this->uri->segment(3); // igual ao codeigniter
+        $id = $this->request->param('id'); //= $this->uri->segment(3); // igual ao codeigniter
         //echo $this->request->param('id');
         //Apaga o objeto post com o id passado
-        //como parametro      
-        ORM::factory('site', $id)
-                ->delete();
+        //como parametro    
+        $d = ORM::factory('site', $id);
+        if ($d->loaded()) {
+            $d->delete();
+        }
+//        ORM::factory('site',$id)
+//                ->delete();
         //tá dando erro model não carregado não sei resolver
+        //era $d->loaded() isso não carregava o medel o loaded garante que foi achado
+        //http://groups.google.com/group/kohana-php/browse_thread/thread/8e8e125143facb7e
         //redireciona para o controller blog
-        $this->request->redirect('/');
+        $this->request->redirect('site/list');
     }
 
 }

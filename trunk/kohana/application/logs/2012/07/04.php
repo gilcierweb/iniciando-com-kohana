@@ -852,3 +852,126 @@
 #4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
 #6 {main}
+2012-07-04 18:58:02 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL list was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+2012-07-04 18:58:02 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL list was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 87 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-04 18:58:12 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 18:58:12 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete('1')
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 18:58:37 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 18:58:37 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete('1')
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 18:59:07 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 18:59:07 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete('1')
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 18:59:09 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 18:59:09 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete('1')
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 19:01:29 --- ERROR: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+2012-07-04 19:01:29 --- STRACE: Kohana_Exception [ 0 ]: Cannot delete site model because it is not loaded. ~ MODPATH\orm\classes\kohana\orm.php [ 1326 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(57): Kohana_ORM->delete('1')
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 19:02:00 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+2012-07-04 19:02:00 --- STRACE: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(50): Kohana_Core::error_handler(2, 'Missing argumen...', 'D:\xampp\htdocs...', 50, Array)
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 19:02:13 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+2012-07-04 19:02:13 --- STRACE: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(50): Kohana_Core::error_handler(2, 'Missing argumen...', 'D:\xampp\htdocs...', 50, Array)
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 19:02:15 --- ERROR: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+2012-07-04 19:02:15 --- STRACE: ErrorException [ 2 ]: Missing argument 1 for Controller_Site::action_deletar() ~ APPPATH\classes\controller\site.php [ 50 ]
+--
+#0 D:\xampp\htdocs\kohana\application\classes\controller\site.php(50): Kohana_Core::error_handler(2, 'Missing argumen...', 'D:\xampp\htdocs...', 50, Array)
+#1 [internal function]: Controller_Site->action_deletar()
+#2 D:\xampp\htdocs\kohana\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Site))
+#3 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-04 19:03:26 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/1 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+2012-07-04 19:03:26 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/1 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-04 19:03:36 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/5 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+2012-07-04 19:03:36 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/5 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-04 19:03:42 --- ERROR: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/1 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+2012-07-04 19:03:42 --- STRACE: HTTP_Exception_404 [ 404 ]: The requested URL site/deletar/1 was not found on this server. ~ SYSPATH\classes\kohana\request\client\internal.php [ 113 ]
+--
+#0 D:\xampp\htdocs\kohana\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#1 D:\xampp\htdocs\kohana\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#2 D:\xampp\htdocs\kohana\index.php(109): Kohana_Request->execute()
+#3 {main}
+2012-07-04 19:06:34 --- ERROR: ErrorException [ 1 ]: Class 'Model_Sites' not found ~ MODPATH\orm\classes\kohana\orm.php [ 37 ]
+2012-07-04 19:06:34 --- STRACE: ErrorException [ 1 ]: Class 'Model_Sites' not found ~ MODPATH\orm\classes\kohana\orm.php [ 37 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-04 19:07:11 --- ERROR: ErrorException [ 1 ]: Call to undefined method DB::factory() ~ APPPATH\classes\controller\site.php [ 56 ]
+2012-07-04 19:07:11 --- STRACE: ErrorException [ 1 ]: Call to undefined method DB::factory() ~ APPPATH\classes\controller\site.php [ 56 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}
+2012-07-04 19:07:12 --- ERROR: ErrorException [ 1 ]: Call to undefined method DB::factory() ~ APPPATH\classes\controller\site.php [ 56 ]
+2012-07-04 19:07:12 --- STRACE: ErrorException [ 1 ]: Call to undefined method DB::factory() ~ APPPATH\classes\controller\site.php [ 56 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}

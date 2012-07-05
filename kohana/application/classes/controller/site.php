@@ -63,7 +63,7 @@ class Controller_Site extends Controller_Template
 //        ORM::factory('site',$id)
 //                ->delete();
         //tá dando erro model não carregado não sei resolver
-        //era $d->loaded() isso não carregava o medel o loaded garante que foi achado
+        //era $deletar->loaded() isso não carregava o model o loaded garante que foi achado
         //http://groups.google.com/group/kohana-php/browse_thread/thread/8e8e125143facb7e
         //redireciona para o controller blog
         $this->request->redirect('site/list');

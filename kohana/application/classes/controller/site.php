@@ -23,7 +23,7 @@ class Controller_Site extends Controller_Template
         //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
         ////qualquer nome erra da tabela da erro estranho!!
         //Seleciona todos os posts          
-        $dados = ORM::Factory('site')->find_all();
+        $dados = ORM::Factory('site')->order_by('dado_id', 'desc')->find_all();
         //Seleciona a View de lista de posts,
         //une o objetos Post selecionado acima a view
         $view = View::Factory('site/list');
@@ -71,15 +71,22 @@ class Controller_Site extends Controller_Template
 
     public function action_form_insert()
     {
+        $article_id = $this->request->param('id');
+        $article = new Model_Site($article_id);
+        $article->values($_POST); // populate $article object from $_POST array
+        $article->save(); // saves article to database         
+        if ($article->save()) {
+            $this->request->redirect('site/list');
+        }
 //        $entry = new Model_Site();
 //        $entry->form_insert();
-        $article = ORM::factory('site');
-        $article->dado_titulo = $this->request->post('dado_titulo');
-        $article->dado_resumo = $this->request->post('dado_resumo');
-        $article->dado_descricao = $this->request->post('dado_descricao');
-        if ($article->save()) {
-            $this->request->redirect('site/form');
-        }
+        /* $article = ORM::factory('site');
+          $article->dado_titulo = $this->request->post('dado_titulo');
+          $article->dado_resumo = $this->request->post('dado_resumo');
+          $article->dado_descricao = $this->request->post('dado_descricao');
+          if ($article->save()) {
+          $this->request->redirect('site/form');
+          } */
     }
 
 // save the article

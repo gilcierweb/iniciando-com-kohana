@@ -6,6 +6,11 @@ class Controller_Site extends Controller_Template
 {
 
     public $template = 'template'; // bug 02/07/12 só aceita o nome $template porque herda da class Controller_Template
+   
+    public function session()
+    {
+        $this->session = Session::instance();
+    }
 
     public function action_index()
     {
@@ -35,11 +40,6 @@ class Controller_Site extends Controller_Template
     public function action_form()
     {
         $id = $this->request->param('id');
-//        $dados = new Model_Site($dados_id);
-//        $dados->values($_POST); // populate $dados object from $_POST array
-//        $dados->save(); // saves dados to database
-        //Seleciona um objeto Post através do ORM,
-        //se nao existir id trás um objeto em branco  
         $dados = ORM::factory('site', $id);
         $view = new View('site/form');
         $view->set("dados", $dados);
@@ -50,10 +50,8 @@ class Controller_Site extends Controller_Template
     public function action_new()
     {
         $dados = new Model_Article();
-
         $view = new View('dados/edit');
         $view->set("dados", $dados);
-
         $this->response->body($view);
     }
 
@@ -61,26 +59,29 @@ class Controller_Site extends Controller_Template
     public function action_edit()
     {
         $dados_id = $this->request->param('id');
-        $dados = new Model_Article($dados_id);
-
+        $dados = new Model_Site($dados_id);
         $view = new View('dados/edit');
         $view->set("dados", $dados);
-
         $this->response->body($view);
     }
 
     public function action_form_insert()
     {
+        $this->session();
         $dados_id = $this->request->param('id');
-        $dados = new Model_Site($dados_id);
-        $dados->values($_POST); // populate $dados object from $_POST array
-        $dados->save(); // saves dados to database         
+        $dados = ORM::factory('Site', $dados_id);
+        $dados->values($this->request->post()); // populate $dados object from $_POST array          
         if ($dados->save()) {
+            //$dados->save(); // saves update dados to database
+            $this->session->set('msg', '<div class="alert alert-success">
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro Inserido com sucesso!!</h1></div>');
             $this->request->redirect('site/list');
+        } else {
+            echo 'Error: Não carregou o model!!';
         }
-//        $entry = new Model_Site();
-//        $entry->form_insert();
-        /* $dados = ORM::factory('site');
+        /* $entry = new Model_Site();
+          $entry->form_insert();
+          $dados = ORM::factory('site');
           $dados->dado_titulo = $this->request->post('dado_titulo');
           $dados->dado_resumo = $this->request->post('dado_resumo');
           $dados->dado_descricao = $this->request->post('dado_descricao');
@@ -92,36 +93,33 @@ class Controller_Site extends Controller_Template
 // save the dados
     public function action_post()
     {
+        $this->session();
         $dados_id = $this->request->param('id');
         $dados = new Model_Site($dados_id);
         $dados->values($_POST); // populate $dados object from $_POST array
-        $dados->save(); // saves dados to database         
-        $this->request->redirect('site/list');
+        if ($dados->save()) {
+            $this->session->set('msg', '<div class="alert alert-success">
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro Inserido com sucesso!!</h1></div>');
+            $this->request->redirect('site/list');
+        } else {
+            echo 'Error: Não carregou o model!!';
+        }
     }
 
     public function action_deletar()
     {
-        $this->session = Session::instance();
-        $id = $this->request->param('id'); //= $this->uri->segment(3); // igual ao codeigniter
-        //echo $this->request->param('id');
-        //Apaga o objeto post com o id passado
-        //como parametro    
+        $this->session();
+        $id = $this->request->param('id');
         $deletar = ORM::factory('site', $id);
         // Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
         if ($deletar->loaded()) {
             $deletar->delete();
             $this->session->set('msg', '<div class="alert alert-success">
-<a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');           
+            $this->request->redirect('site/list');
         } else {
             echo 'Error: Não carregou o model!!';
         }
-//        ORM::factory('site',$id)
-//                ->delete();
-        //tá dando erro model não carregado não sei resolver
-        //era $deletar->loaded() isso não carregava o model o loaded garante que foi achado
-        //http://groups.google.com/group/kohana-php/browse_thread/thread/8e8e125143facb7e
-        //redireciona para o controller blog
-        $this->request->redirect('site/list');
     }
 
 }

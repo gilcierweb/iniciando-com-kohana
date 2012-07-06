@@ -35,67 +35,67 @@ class Controller_Site extends Controller_Template
     public function action_form()
     {
         $id = $this->request->param('id');
-//        $article = new Model_Site($article_id);
-//        $article->values($_POST); // populate $article object from $_POST array
-//        $article->save(); // saves article to database
+//        $dados = new Model_Site($dados_id);
+//        $dados->values($_POST); // populate $dados object from $_POST array
+//        $dados->save(); // saves dados to database
         //Seleciona um objeto Post através do ORM,
         //se nao existir id trás um objeto em branco  
-        $article = ORM::factory('site', $id);
+        $dados = ORM::factory('site', $id);
         $view = new View('site/form');
-        $view->set("article", $article);
+        $view->set("dados", $dados);
         $this->template->content = $view;
     }
 
-    // loads the new article form
+    // loads the new dados form
     public function action_new()
     {
-        $article = new Model_Article();
+        $dados = new Model_Article();
 
-        $view = new View('article/edit');
-        $view->set("article", $article);
+        $view = new View('dados/edit');
+        $view->set("dados", $dados);
 
         $this->response->body($view);
     }
 
-    // edit the article
+    // edit the dados
     public function action_edit()
     {
-        $article_id = $this->request->param('id');
-        $article = new Model_Article($article_id);
+        $dados_id = $this->request->param('id');
+        $dados = new Model_Article($dados_id);
 
-        $view = new View('article/edit');
-        $view->set("article", $article);
+        $view = new View('dados/edit');
+        $view->set("dados", $dados);
 
         $this->response->body($view);
     }
 
     public function action_form_insert()
     {
-        $article_id = $this->request->param('id');
-        $article = new Model_Site($article_id);
-        $article->values($_POST); // populate $article object from $_POST array
-        $article->save(); // saves article to database         
-        if ($article->save()) {
+        $dados_id = $this->request->param('id');
+        $dados = new Model_Site($dados_id);
+        $dados->values($_POST); // populate $dados object from $_POST array
+        $dados->save(); // saves dados to database         
+        if ($dados->save()) {
             $this->request->redirect('site/list');
         }
 //        $entry = new Model_Site();
 //        $entry->form_insert();
-        /* $article = ORM::factory('site');
-          $article->dado_titulo = $this->request->post('dado_titulo');
-          $article->dado_resumo = $this->request->post('dado_resumo');
-          $article->dado_descricao = $this->request->post('dado_descricao');
-          if ($article->save()) {
+        /* $dados = ORM::factory('site');
+          $dados->dado_titulo = $this->request->post('dado_titulo');
+          $dados->dado_resumo = $this->request->post('dado_resumo');
+          $dados->dado_descricao = $this->request->post('dado_descricao');
+          if ($dados->save()) {
           $this->request->redirect('site/form');
           } */
     }
 
-// save the article
+// save the dados
     public function action_post()
     {
-        $article_id = $this->request->param('id');
-        $article = new Model_Site($article_id);
-        $article->values($_POST); // populate $article object from $_POST array
-        $article->save(); // saves article to database         
+        $dados_id = $this->request->param('id');
+        $dados = new Model_Site($dados_id);
+        $dados->values($_POST); // populate $dados object from $_POST array
+        $dados->save(); // saves dados to database         
         $this->request->redirect('site/list');
     }
 

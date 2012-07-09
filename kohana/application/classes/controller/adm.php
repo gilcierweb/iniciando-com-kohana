@@ -128,8 +128,8 @@ class Controller_Adm extends Controller_Template
         //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
         ////qualquer nome erra da tabela da erro estranho!!
         //Seleciona todos os posts          
-        $dados = ORM::Factory('adm')->order_by('banner_id', 'desc')->find_all();
-        $t = ORM::Factory('adm')->order_by('banner_id', 'desc')->count_all();
+        $dados = ORM::Factory('banner')->order_by('banner_id', 'desc')->find_all();
+        $t = ORM::Factory('banner')->order_by('banner_id', 'desc')->count_all();
         //Seleciona a View de lista de posts,
         //une o objetos Post selecionado acima a view
         $view = View::Factory('admin/banners');

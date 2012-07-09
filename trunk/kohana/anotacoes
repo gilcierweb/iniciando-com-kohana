@@ -1,7 +1,9 @@
 No konaha tem que se criar um model para cada tabela do banco de dados.
+isso deveria ser diferente devia ser igual ao codeigniter.
 http://code.google.com/p/phpscrum/
 
 Exemplo:
+...clases/model/banner.php
 
 <?php defined('SYSPATH') or die('No direct script access.');
 
@@ -20,4 +22,9 @@ class Model_Admin extends ORM {
         
         public $_table_name = 'admins';
 
+}
+class Model_Banner extends ORM
+{
+    public $_table_name = 'banners';
+    public $_primary_key = 'banner_id';
 }

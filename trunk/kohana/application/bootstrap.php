@@ -120,7 +120,7 @@ Kohana::modules(array(
 //                'action'     => 'index',
 //        ));
 
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+Route::set('default', '(<controller>(/<action>(/<id>(/<id2>))))')
 	->defaults(array(
 		'controller' => 'site',
 		'action'     => 'index',

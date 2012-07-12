@@ -5,26 +5,44 @@ http://code.google.com/p/phpscrum/
 Exemplo:
 ...clases/model/banner.php
 
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+defined('SYSPATH') or die('No direct script access.');
 
-class Model_Admin extends ORM {
+class Model_Admin extends ORM
+{
 
-        public $_belongs_to = array(
-                'group' => array(
-                        'model' => 'group',
-                        'foreign_key' => 'admin_id'
-                ),
-        );
-        
-        public $_has_one = array();
-        
-        public $_has_many = array();
-        
-        public $_table_name = 'admins';
+    public $_belongs_to = array(
+        'group' => array(
+            'model' => 'group',
+            'foreign_key' => 'admin_id'
+        ),
+    );
+    public $_has_one = array();
+    public $_has_many = array();
+    public $_table_name = 'admins';
 
 }
+
 class Model_Banner extends ORM
 {
+
     public $_table_name = 'banners';
     public $_primary_key = 'banner_id';
+
 }
+
+//http://kerkness.ca/kowiki/doku.php?id=routing:routing_basics
+//Ao contrário KO2, KO3 padrão Roteamento em seu bootstrap não 
+//
+//lidar com 2 ou mais parâmetros como example.com / <controller> / <action> / <param1> / <param2>
+Route::set('default', '(<controller>(/<action>(/<id1>(/<id2>))))')
+        ->defaults(array(
+            'controller' => 'site',
+            'action' => 'index',
+        ));
+
+//no Controller receber
+//só assim da certo poderia ser com era do codeigniter
+
+echo $this->request->param('id1');
+echo $this->request->param('id2');

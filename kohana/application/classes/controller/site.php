@@ -23,7 +23,8 @@ class Controller_Site extends Controller_Template
     }
 
     public function action_list()
-    {
+    {echo $this->request->param('id').'<br />';
+        echo $this->request->param('id2');
         //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
         //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
         ////qualquer nome erra da tabela da erro estranho!!

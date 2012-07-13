@@ -6,7 +6,7 @@ class Controller_Site extends Controller_Template
 {
 
     public $template = 'template'; // bug 02/07/12 só aceita o nome $template porque herda da class Controller_Template
-   
+
     public function session()
     {
         $this->session = Session::instance();
@@ -23,7 +23,8 @@ class Controller_Site extends Controller_Template
     }
 
     public function action_list()
-    {echo $this->request->param('id').'<br />';
+    {
+        echo $this->request->param('id') . '<br />';
         echo $this->request->param('id2');
         //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
         //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
@@ -116,13 +117,66 @@ class Controller_Site extends Controller_Template
         if ($deletar->loaded()) {
             $deletar->delete();
             $this->session->set('msg', '<div class="alert alert-success">
-                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');           
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');
             $this->request->redirect('site/list');
         } else {
             echo 'Error: Não carregou o model!!';
         }
     }
 
-}
+    public function action_img()
+    {
+        $view = View::factory('site/upload');
+        $this->template->content = $view;
+    }
 
+    public function action_upload()
+    {
+        $view = View::factory('site/upload');
+        $error_message = NULL;
+        $filename = NULL;
+
+        if ($this->request->method() == Request::POST) {
+            if (isset($_FILES['avatar'])) {
+                $filename = $this->_save_image($_FILES['avatar']);
+            }
+        }
+
+        if (!$filename) {
+            $error_message = 'There was a problem while uploading the image.
+                Make sure it is uploaded and must be JPG/PNG/GIF file.';
+        }
+
+        $view->uploaded_file = $filename;
+        $view->error_message = $error_message;
+        $this->template->content = $view;
+    }
+
+    protected function _save_image($image)
+    {
+        if (
+                !Upload::valid($image) OR
+                !Upload::not_empty($image) OR
+                !Upload::type($image, array('jpg', 'jpeg', 'png', 'gif'))) {
+            return FALSE;
+        }
+
+        $directory = DOCROOT . 'uploads/';
+        $file = Upload::save($image, NULL, $directory);
+        if ($file) {
+            $filename = strtolower(Text::random('alnum', 20)) . '.jpg';
+            //return $filename;  
+            Image::factory($file)
+                    ->resize(500, NULL, Image::WIDTH)
+                    ->save($directory . $filename);  
+            // Delete the temporary file
+            unlink($file);
+
+            return $filename;
+        }
+
+        return FALSE;
+    }
+
+}
 // End Site

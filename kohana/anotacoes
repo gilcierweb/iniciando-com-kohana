@@ -46,3 +46,29 @@ Route::set('default', '(<controller>(/<action>(/<id1>(/<id2>))))')
 
 echo $this->request->param('id1');
 echo $this->request->param('id2');
+
+//http://kerkness.ca/kowiki/doku.php?id=routing:static_pages
+ /**
+   * This route supports the pages called 'about', 'faq' and 'locations'.
+   * Each page accessible using only its name, for example
+   * http://example.com/about or http://example.com/faq
+   */
+  Route::set('static', '<page>', array('page' => 'about|faq|locations')) 
+  	->defaults(array( 
+  		'controller' => 'page', 
+  		'action' => 'static', 
+  	)); 
+  
+  //<?php defined('SYSPATH') or die('No direct script access.');
+  
+  class Controller_Pages extends Controller_Template {
+  
+      public function action_static()
+      {
+  	    // Get the name of our requested page	
+          $page = Request::instance()->param('page');
+  
+          // Assign the appropriate view file to the template content
+          $this->template->content = View::factory('page/'. i18n::$lang .'/'. $page );
+      }
+  }

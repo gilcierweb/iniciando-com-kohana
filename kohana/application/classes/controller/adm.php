@@ -201,7 +201,6 @@ class Controller_Adm extends Controller_Template
     public function action_banner_update()
     {
         $view = new View('admin/admin/update');
-
         $this->template->title = __('system.user.index.title');
         $this->template->body = $view;
     }

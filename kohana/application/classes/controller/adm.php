@@ -148,7 +148,15 @@ class Controller_Adm extends Controller_Template
             return FALSE;
         }
 
-        $directory = DOCROOT . 'uploads/';
+        $directory = DOCROOT . 'banner_img/';
+        //cria a pasta se não existir;
+        // Make sure the directory ends with a slash
+        $directory = rtrim($directory, '/') . '/';
+        if (!is_dir($directory)) {
+            // Create the upload directory
+            mkdir($directory, 0777, TRUE);
+        }
+
         $file = Upload::save($image, NULL, $directory);
         if ($file) {
             $filename = strtolower(Text::random('alnum', 20)) . '.jpg';
@@ -173,6 +181,7 @@ class Controller_Adm extends Controller_Template
         $error_message = NULL;
         $filename = NULL;
 
+        //echo Debug::vars($dados);exit; para debugar os dados
         if ($this->request->method() == Request::POST) {
             //tava acontecendo um erro no form estava multipart/from-data, errado, certo "multipart/form-data"  
             if (isset($_FILES['banner_imagem'])) {
@@ -198,11 +207,27 @@ class Controller_Adm extends Controller_Template
         }
     }
 
-    public function action_banner_update()
+    public function action_banner_delete()
     {
-        $view = new View('admin/admin/update');
-        $this->template->title = __('system.user.index.title');
-        $this->template->body = $view;
+        $this->session();
+        $id = $this->request->param('id');
+        $dados = ORM::factory('banner')->where('banner_id','=',$id)->find_all();
+        foreach ($dados as $r) {
+            $imagem = $r->banner_imagem;
+            if (@file_exists("./banner_img/$imagem")) {
+                @unlink("./banner_img/$imagem");
+            }
+        }
+        $deletar = ORM::factory('banner', $id);
+        // Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
+        if ($deletar->loaded()) {
+            $deletar->delete();
+            $this->session->set('msg', '<div class="alert alert-success">
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro apagado com sucesso!!</h1></div>');
+            $this->request->redirect('adm/banners');
+        } else {
+            echo 'Error: Não carregou o model!!';
+        }
     }
 
     public function action_upload()

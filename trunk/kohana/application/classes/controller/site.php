@@ -137,6 +137,7 @@ class Controller_Site extends Controller_Template
         $filename = NULL;
 
         if ($this->request->method() == Request::POST) {
+            print_r($_FILES['avatar']);exit;
             if (isset($_FILES['avatar'])) {
                 $filename = $this->_save_image($_FILES['avatar']);
             }

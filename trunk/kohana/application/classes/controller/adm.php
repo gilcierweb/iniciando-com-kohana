@@ -123,7 +123,7 @@ class Controller_Adm extends Controller_Template
     }
 
     public function action_banners()
-    {echo $id = $this->request->param('param2');
+    {// $id = $this->request->param('param2');
         //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
         //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
         ////qualquer nome erra da tabela da erro estranho!!
@@ -139,12 +139,63 @@ class Controller_Adm extends Controller_Template
         $this->template->content = $view;
     }
 
+    public function _save_image($image)
+    {
+        if (
+                !Upload::valid($image) OR
+                !Upload::not_empty($image) OR
+                !Upload::type($image, array('jpg', 'jpeg', 'png', 'gif'))) {
+            return FALSE;
+        }
+
+        $directory = DOCROOT . 'uploads/';
+        $file = Upload::save($image, NULL, $directory);
+        if ($file) {
+            $filename = strtolower(Text::random('alnum', 20)) . '.jpg';
+            //return $filename;  
+            Image::factory($file)
+                    ->resize(500, NULL, Image::WIDTH)
+                    ->save($directory . $filename);
+            // Delete the temporary file
+            unlink($file);
+
+            return $filename;
+        }
+
+        return FALSE;
+    }
+
     public function action_banner_create()
     {
-        $view = new View('admin/admin/create');
-        $view->groups = ORM::factory('group')->find_all();
-        $this->template->title = __('system.user.index.title');
-        $this->template->body = $view;
+        $this->session();
+        $dados_id = $this->request->param('id');
+        $dados = ORM::factory('banner', $dados_id);
+        $error_message = NULL;
+        $filename = NULL;
+
+        if ($this->request->method() == Request::POST) {
+            //tava acontecendo um erro no form estava multipart/from-data, errado, certo "multipart/form-data"  
+            if (isset($_FILES['banner_imagem'])) {
+                $filename = $this->_save_image($_FILES['banner_imagem']);
+                $dados->banner_titulo = $this->request->post('banner_titulo');
+                $dados->banner_imagem = $filename;
+                $dados->banner_link = $this->request->post('banner_link');
+            }
+        }
+        if (!$filename) {
+            $error_message = 'There was a problem while uploading the image.
+                Make sure it is uploaded and must be JPG/PNG/GIF file.';
+        }
+
+        //$dados->values($_POST); // populate $dados object from $_POST array
+
+        if ($dados->save()) {
+            $this->session->set('msg', '<div class="alert alert-success">
+                        <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro Inserido com sucesso!!</h1></div>');
+            $this->request->redirect('adm/banners');
+        } else {
+            echo 'Error: Não carregou o model!!';
+        }
     }
 
     public function action_banner_update()
@@ -153,6 +204,28 @@ class Controller_Adm extends Controller_Template
 
         $this->template->title = __('system.user.index.title');
         $this->template->body = $view;
+    }
+
+    public function action_upload()
+    {
+        $view = View::factory('site/upload');
+        $error_message = NULL;
+        $filename = NULL;
+
+        if ($this->request->method() == Request::POST) {
+            if (isset($_FILES['banner_imagem'])) {
+                $filename = $this->_save_image($_FILES['banner_imagem']);
+            }
+        }
+
+        if (!$filename) {
+            $error_message = 'There was a problem while uploading the image.
+                Make sure it is uploaded and must be JPG/PNG/GIF file.';
+        }
+
+        $view->uploaded_file = $filename;
+        $view->error_message = $error_message;
+        $this->template->content = $view;
     }
 
 }

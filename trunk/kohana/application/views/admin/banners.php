@@ -47,8 +47,8 @@ if ($total == '0') {
         <p><img src="<?php echo url::base(); ?>banner_img/<?php echo $banner_imagem; ?>" width="936" height="346"/></p>    
 
         <div class="operacao">
-            <p><a href="<?php echo url::base(); ?>adm/banners/editar/<?php echo $id; ?>"><img src="<?php echo url::base(); ?>img/editar.png" width="30" height="30" title="Editar"/></a></p>
-            <p><a href="<?php echo url::base(); ?>adm/banner_delete/<?php echo $id; ?>"><img src="<?php echo url::base(); ?>img/button_cancel.png" width="30" height="30"  title="Deletar"/></a></p>
+            <p><a href="<?php echo url::base(); ?>adm/banners/editar/<?php echo $id; ?>"><img src="<?php echo url::base(); ?>img/adm/editar.png" width="30" height="30" alt="Editar" title="Editar"/></a></p>
+            <p><a href="<?php echo url::base(); ?>adm/banner_delete/<?php echo $id; ?>"><img src="<?php echo url::base(); ?>img/adm/button_cancel.png" width="30" height="30" alt="Deletar" title="Deletar"/></a></p>
         </div>
         <hr />
 

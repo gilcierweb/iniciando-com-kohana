@@ -45,6 +45,7 @@ class Controller_Site extends Controller_Template
         $dados = ORM::factory('site', $id);
         $view = new View('site/form');
         $view->set("dados", $dados);
+        $view->set("values", $dados);
         $this->template->content = $view;
     }
 
@@ -98,7 +99,7 @@ class Controller_Site extends Controller_Template
         $this->session();
         $dados_id = $this->request->param('id');
         $dados = new Model_Site($dados_id);
-        $dados->values($_POST); // populate $dados object from $_POST array
+        $dados->values($_POST); // populate $dados object from $_POST array        
         if ($dados->save()) {
             $this->session->set('msg', '<div class="alert alert-success">
                         <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro Inserido com sucesso!!</h1></div>');

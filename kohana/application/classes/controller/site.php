@@ -26,16 +26,16 @@ class Controller_Site extends Controller_Template
     {
         echo $this->request->param('id') . '<br />';
         echo $this->request->param('id2');
-        //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
-        //http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
-        ////qualquer nome erra da tabela da erro estranho!!
-        //Seleciona todos os posts          
+//http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
+//http://kowsercse.com/2011/09/04/kohana-tutorial-beginners/
+////qualquer nome erra da tabela da erro estranho!!
+//Seleciona todos os posts          
         $dados = ORM::Factory('site')->order_by('dado_id', 'desc')->find_all();
-        //Seleciona a View de lista de posts,
-        //une o objetos Post selecionado acima a view
+//Seleciona a View de lista de posts,
+//une o objetos Post selecionado acima a view
         $view = View::Factory('site/list');
         $view->set('dados', $dados);
-        //Envia a renderizacao da view ao browser
+//Envia a renderizacao da view ao browser
         $this->template->content = $view;
     }
 
@@ -49,7 +49,7 @@ class Controller_Site extends Controller_Template
         $this->template->content = $view;
     }
 
-    // loads the new dados form
+// loads the new dados form
     public function action_new()
     {
         $dados = new Model_Article();
@@ -58,7 +58,7 @@ class Controller_Site extends Controller_Template
         $this->response->body($view);
     }
 
-    // edit the dados
+// edit the dados
     public function action_edit()
     {
         $dados_id = $this->request->param('id');
@@ -73,14 +73,26 @@ class Controller_Site extends Controller_Template
         $this->session();
         $dados_id = $this->request->param('id');
         $dados = ORM::factory('Site', $dados_id);
-        $dados->values($this->request->post()); // populate $dados object from $_POST array          
-        if ($dados->save()) {
-            //$dados->save(); // saves update dados to database
-            $this->session->set('msg', '<div class="alert alert-success">
+        $this->template->content = View::factory('brands/edit')
+        ->set('brand', $brand)
+        ->bind('errors', $errors);
+        if (!$dados->loaded()) {
+            throw new Kohana_Exception('Error: Não carregou o model!!.');
+        }
+        if ($this->request->method() === Request::POST) {
+            try {
+                $dados->values($this->request->post()); // populate $dados object from $_POST array          
+                if ($dados->save()) {
+//$dados->save(); // saves update dados to database
+                    $this->session->set('msg', '<div class="alert alert-success">
                         <a class="close" data-dismiss="alert" href="#">×</a><h1>Registro Inserido com sucesso!!</h1></div>');
-            $this->request->redirect('site/list');
-        } else {
-            echo 'Error: Não carregou o model!!';
+                    $this->request->redirect('site/list');
+                }
+            } catch (ORM_Validation_Exception $e) {
+// Fail!
+
+                $errors = $e->errors('Site');
+            }
         }
         /* $entry = new Model_Site();
           $entry->form_insert();
@@ -91,6 +103,35 @@ class Controller_Site extends Controller_Template
           if ($dados->save()) {
           $this->request->redirect('site/form');
           } */
+    }
+
+    public function action_edit1()
+    {
+        $brand = ORM::factory('brand', $this->request->param('id'));
+
+        if (!$brand->loaded()) {
+            throw new Kohana_Exception('Brand not found.');
+        }
+
+        $this->template->title = __('Edit Brand');
+        $this->template->content = View::factory('brands/edit')
+                ->set('brand', $brand)
+                ->bind('errors', $errors);
+
+        if ($this->request->method() === Request::POST) {
+            try {
+                $brand->values($this->request->post());
+                $brand->save();
+
+// Success! You probably want to set a session message here.
+
+                $this->request->redirect($this->request->uri());
+            } catch (ORM_Validation_Exception $e) {
+// Fail!
+
+                $errors = $e->errors('brand');
+            }
+        }
     }
 
 // save the dados
@@ -114,7 +155,7 @@ class Controller_Site extends Controller_Template
         $this->session();
         $id = $this->request->param('id');
         $deletar = ORM::factory('site', $id);
-        // Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
+// Use o ORM::loaded  para verificar se ORM carregado com êxito um registro..
         if ($deletar->loaded()) {
             $deletar->delete();
             $this->session->set('msg', '<div class="alert alert-success">
@@ -138,7 +179,8 @@ class Controller_Site extends Controller_Template
         $filename = NULL;
 
         if ($this->request->method() == Request::POST) {
-            print_r($_FILES['avatar']);exit;
+            print_r($_FILES['avatar']);
+            exit;
             if (isset($_FILES['avatar'])) {
                 $filename = $this->_save_image($_FILES['avatar']);
             }
@@ -167,11 +209,11 @@ class Controller_Site extends Controller_Template
         $file = Upload::save($image, NULL, $directory);
         if ($file) {
             $filename = strtolower(Text::random('alnum', 20)) . '.jpg';
-            //return $filename;  
+//return $filename;  
             Image::factory($file)
                     ->resize(500, NULL, Image::WIDTH)
-                    ->save($directory . $filename);  
-            // Delete the temporary file
+                    ->save($directory . $filename);
+// Delete the temporary file
             unlink($file);
 
             return $filename;
@@ -181,4 +223,5 @@ class Controller_Site extends Controller_Template
     }
 
 }
+
 // End Site

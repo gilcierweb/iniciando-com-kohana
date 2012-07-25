@@ -2,28 +2,23 @@
 
 defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Site extends Controller_Template
-{
+class Controller_Site extends Controller_Template {
 
     public $template = 'template'; // bug 02/07/12 só aceita o nome $template porque herda da class Controller_Template
 
-    public function session()
-    {
+    public function session() {
         $this->session = Session::instance();
     }
 
-    public function action_index()
-    {
+    public function action_index() {
         $this->template->content = View::factory('site/index');
     }
 
-    public function action_gil()
-    {
+    public function action_gil() {
         $this->template->content = 'hello, world!<br>Admin Base';
     }
 
-    public function action_list()
-    {
+    public function action_list() {
         echo $this->request->param('id') . '<br />';
         echo $this->request->param('id2');
 //http://beto.euqueroserummacaco.com/blog/sua-primeira-aplicacao-com-o-framework-kohana/
@@ -39,8 +34,7 @@ class Controller_Site extends Controller_Template
         $this->template->content = $view;
     }
 
-    public function action_form()
-    {
+    public function action_form() {
         $id = $this->request->param('id');
         $dados = ORM::factory('site', $id);
         $view = new View('site/form');
@@ -50,8 +44,7 @@ class Controller_Site extends Controller_Template
     }
 
 // loads the new dados form
-    public function action_new()
-    {
+    public function action_new() {
         $dados = new Model_Article();
         $view = new View('dados/edit');
         $view->set("dados", $dados);
@@ -59,8 +52,7 @@ class Controller_Site extends Controller_Template
     }
 
 // edit the dados
-    public function action_edit()
-    {
+    public function action_edit() {
         $dados_id = $this->request->param('id');
         $dados = new Model_Site($dados_id);
         $view = new View('dados/edit');
@@ -68,14 +60,13 @@ class Controller_Site extends Controller_Template
         $this->response->body($view);
     }
 
-    public function action_form_insert()
-    {
+    public function action_form_insert() {
         $this->session();
         $dados_id = $this->request->param('id');
         $dados = ORM::factory('Site', $dados_id);
         $this->template->content = View::factory('brands/edit')
-        ->set('brand', $brand)
-        ->bind('errors', $errors);
+                ->set('brand', $brand)
+                ->bind('errors', $errors);
         if (!$dados->loaded()) {
             throw new Kohana_Exception('Error: Não carregou o model!!.');
         }
@@ -105,8 +96,7 @@ class Controller_Site extends Controller_Template
           } */
     }
 
-    public function action_edit1()
-    {
+    public function action_edit1() {
         $brand = ORM::factory('brand', $this->request->param('id'));
 
         if (!$brand->loaded()) {
@@ -135,8 +125,7 @@ class Controller_Site extends Controller_Template
     }
 
 // save the dados
-    public function action_post()
-    {
+    public function action_post() {
         $this->session();
         $dados_id = $this->request->param('id');
         $dados = new Model_Site($dados_id);
@@ -150,8 +139,7 @@ class Controller_Site extends Controller_Template
         }
     }
 
-    public function action_deletar()
-    {
+    public function action_deletar() {
         $this->session();
         $id = $this->request->param('id');
         $deletar = ORM::factory('site', $id);
@@ -166,14 +154,12 @@ class Controller_Site extends Controller_Template
         }
     }
 
-    public function action_img()
-    {
+    public function action_img() {
         $view = View::factory('site/upload');
         $this->template->content = $view;
     }
 
-    public function action_upload()
-    {
+    public function action_upload() {
         $view = View::factory('site/upload');
         $error_message = NULL;
         $filename = NULL;
@@ -196,8 +182,7 @@ class Controller_Site extends Controller_Template
         $this->template->content = $view;
     }
 
-    protected function _save_image($image)
-    {
+    protected function _save_image($image) {
         if (
                 !Upload::valid($image) OR
                 !Upload::not_empty($image) OR
@@ -220,6 +205,39 @@ class Controller_Site extends Controller_Template
         }
 
         return FALSE;
+    }
+
+    public function action_register() {
+        $user = Model::factory('user');
+
+        $post = Validate::factory($_POST)
+                ->filter(TRUE, 'trim')
+                ->filter('username', 'strtolower')
+                ->rule('username', 'not_empty')
+                ->rule('username', 'regex', array('/^[a-z_.]++$/iD'))
+                ->rule('username', array($user, 'unique_username'))
+                ->rule('password', 'not_empty')
+                ->rule('password', 'min_length', array('6'))
+                ->rule('confirm', 'matches', array('password'))
+                ->rule('use_ssl', 'not_empty')
+                ->rule('use_ssl', 'in_array', array(array('yes', 'no')))
+                ->callback('password', array($user, 'hash_password'));
+
+        if ($post->check()) {
+            // Data has been validated, register the user
+            $user->register($post);
+
+            // Always redirect after a successful POST to prevent refresh warnings
+            $this->request->redirect('user/profile');
+        }
+
+        // Validation failed, collect the errors
+        $errors = $post->errors('user');
+
+        // Display the registration form
+        $this->request->response = View::factory('user/register')
+                ->bind('post', $post)
+                ->bind('errors', $errors);
     }
 
 }
